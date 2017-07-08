@@ -1,6 +1,6 @@
 var _ = require('lodash');
 
-// deafult config object for our api
+// default config object for our api
 var config = {
   /* just placing the name of our possible NODE_ENV values for later*/
   dev: 'development',
@@ -19,8 +19,9 @@ config.env = process.env.NODE_ENV;
 // add assign the value to envConfig so the merge at the bottom actually works.
 // What's happening here is that we have a base config in this file then we
 // conditionally load in another config file depending on what
-// env we are in. We then merge those objects with the env config overriting
+// env we are in. We then merge those objects with the env config overriding
 // the default config if here. We then export that new object for our app to use
-var envConfig;
+
+var envConfig = require(`./${config.env}`);
 
 module.exports = _.merge(config, envConfig);

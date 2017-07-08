@@ -5,7 +5,7 @@ var _ = require('lodash');
 
 var config = require('../config/config');
 
-// create a noop (no operation) function for when loggin is disabled
+// create a noop (no operation) function for when logging is disabled
 var noop = function(){};
 // check if loggin is enabled in the config
 // if it is, then use console.log
